@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-near-black-canvas: #070709;
+  --color-near-black-surface: #0d0e12;
+  --color-near-black-elevated: #12141b;
+
+  --color-charcoal-subtle: #171922;
+  --color-charcoal-muted: #1e202b;
+  --color-charcoal-border: #2a2d3d;
+
+  --color-warm-white: #fdfbf7;
+  --color-warm-white-muted: #f4f2ed;
+
+  --color-electric-orange: #ff5722;
+  --color-electric-orange-light: #ff7043;
+  --color-electric-orange-dark: #e64a19;
+}
+
+@layer base {
+  * {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbars for dashboard feeds and tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 160, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 160, 160, 0.35);
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
