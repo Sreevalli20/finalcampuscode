@@ -48,6 +48,34 @@
   background: rgba(160, 160, 160, 0.35);
 }
 
+/* Entrance animations (replaces tailwindcss-animate utility classes used across the app) */
+@keyframes cc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cc-zoom-in-95 {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cc-slide-in-from-top-2 {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: cc-fade-in 200ms ease-out both;
+}
+
+.zoom-in-95 {
+  animation: cc-zoom-in-95 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.slide-in-from-top-2 {
+  animation: cc-slide-in-from-top-2 250ms ease-out both;
+}
+
 @media print {
   body {
     background: white !important;

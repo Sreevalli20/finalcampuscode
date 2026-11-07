@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Calendar, ArrowRight, Trophy, Users, FolderGit2, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { EmptyState } from '../../components/common/EmptyState';
 
 export const WorkspaceMyEvents: React.FC = () => {
+  const navigate = useNavigate();
   const { events, registeredEventIds, teams, submissions } = useApp();
 
   const registeredEvents = events.filter((e) => registeredEventIds.includes(e.id));
@@ -32,7 +33,7 @@ export const WorkspaceMyEvents: React.FC = () => {
           title="No Active Registrations"
           description="You haven't registered for any hackathons yet. Browse upcoming competitions to join."
           actionLabel="Browse Competitions"
-          onAction={() => window.location.assign('/workspace/events')}
+          onAction={() => navigate('/workspace/events')}
         />
       ) : (
         <div className="space-y-4">

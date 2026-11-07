@@ -49,6 +49,20 @@ export const EventsPage: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
+          {/* Category filter */}
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="px-3 py-1.5 text-xs rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-200 focus:outline-none focus:border-neutral-700 capitalize"
+            aria-label="Filter by category"
+          >
+            {['all', 'Open Innovation', 'Sustainable Tech', 'Web3 & Fintech', 'AI & Machine Learning', 'Mobile & Cloud'].map((cat) => (
+              <option key={cat} value={cat}>
+                {cat === 'all' ? 'All Categories' : cat}
+              </option>
+            ))}
+          </select>
+
           {/* Status filter */}
           <div className="flex items-center gap-1 p-1 bg-neutral-950 rounded-lg border border-neutral-800">
             {['all', 'ongoing', 'registration_open', 'upcoming', 'completed'].map((st) => (

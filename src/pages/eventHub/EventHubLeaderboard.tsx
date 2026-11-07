@@ -9,7 +9,7 @@ export const EventHubLeaderboard: React.FC = () => {
   const [selectedTrack, setSelectedTrack] = useState<string>('All');
 
   const event = events.find((e) => e.id === eventId);
-  const entries = leaderboards[eventId || 'rebuild-26'] || [];
+  const entries = leaderboards[eventId || ''] || [];
 
   const tracks = ['All', ...(event?.tracks || [])];
 

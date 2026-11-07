@@ -5,7 +5,7 @@ import { useApp } from '../../context/AppContext';
 import { Team, TeamMember } from '../../types';
 import { SEED_HACKMATE_PROFILES } from '../../services/seedData';
 
-export const EventHubTeam: React.FC = () => {
+const EventHubTeamInner: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();
   const { events, teams, saveTeam, currentUser, addToast } = useApp();
 
@@ -304,4 +304,10 @@ export const EventHubTeam: React.FC = () => {
       )}
     </div>
   );
+};
+
+// Keyed wrapper: forces a fresh form state when navigating between events
+export const EventHubTeam: React.FC = () => {
+  const { eventId } = useParams<{ eventId: string }>();
+  return <EventHubTeamInner key={eventId} />;
 };

@@ -118,6 +118,17 @@ export const ProjectPlannerPage: React.FC = () => {
             </div>
           </div>
 
+          <div>
+            <label className="block text-[11px] font-medium text-neutral-400 mb-1">Due Date</label>
+            <input
+              type="text"
+              value={newTaskDueDate}
+              onChange={(e) => setNewTaskDueDate(e.target.value)}
+              placeholder="e.g. Nov 22"
+              className="w-full px-3 py-1.5 text-xs rounded-lg bg-neutral-950 border border-neutral-800 text-neutral-100 focus:outline-none focus:border-neutral-700"
+            />
+          </div>
+
           <div className="flex items-center justify-end gap-2 pt-1">
             <button
               type="button"

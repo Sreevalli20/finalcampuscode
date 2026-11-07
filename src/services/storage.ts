@@ -174,7 +174,15 @@ export const StorageService = {
   },
 
   resetToSeed(): void {
-    localStorage.clear();
+    // Remove only CampusCode keys — never wipe unrelated app data in localStorage
+    const keysToRemove: string[] = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith(STORAGE_PREFIX)) {
+        keysToRemove.push(key);
+      }
+    }
+    keysToRemove.forEach((key) => localStorage.removeItem(key));
     this.getInitialState();
   },
 

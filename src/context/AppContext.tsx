@@ -12,7 +12,7 @@ import {
   PlannerTask,
   LeaderboardEntry,
 } from '../types';
-import { StorageService } from '../services/storage';
+import { StorageService, StorageState } from '../services/storage';
 import { SEED_STUDENT_USER, SEED_ORGANIZER_USER } from '../services/seedData';
 
 export interface ToastMessage {
@@ -56,7 +56,6 @@ interface AppContextValue {
   isCommandPaletteOpen: boolean;
   setCommandPaletteOpen: (open: boolean) => void;
   loginAsDemo: (role: 'student' | 'organizer') => void;
-  logout: () => void;
   resetDemoData: () => void;
   exportState: () => void;
   importState: (json: string) => boolean;
@@ -305,14 +304,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const logout = () => {
-    // Soft logout: resets to student demo without losing state
-    addToast('Logged Out', 'Session cleared. Returning to guest view.', 'info');
-  };
-
-  const resetDemoData = () => {
-    StorageService.resetToSeed();
-    const fresh = StorageService.getInitialState();
+  // Hydrates every piece of persisted state from a StorageState snapshot.
+  // Shared by resetDemoData() and importState() to avoid duplicated setter logic.
+  const applyStorageState = (fresh: StorageState) => {
     setCurrentUser(fresh.currentUser);
     setEvents(fresh.events);
     setRegisteredEventIds(fresh.registeredEventIds);
@@ -325,6 +319,11 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setPlanner(fresh.planner);
     setLeaderboards(fresh.leaderboards);
     setTheme(fresh.theme);
+  };
+
+  const resetDemoData = () => {
+    StorageService.resetToSeed();
+    applyStorageState(StorageService.getInitialState());
     addToast('Demo Reset', 'Environment restored to pristine seed data.', 'success');
   };
 
@@ -343,19 +342,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const importState = (json: string): boolean => {
     const ok = StorageService.importFromJSON(json);
     if (ok) {
-      const fresh = StorageService.getInitialState();
-      setCurrentUser(fresh.currentUser);
-      setEvents(fresh.events);
-      setRegisteredEventIds(fresh.registeredEventIds);
-      setTeams(fresh.teams);
-      setSubmissions(fresh.submissions);
-      setCertificates(fresh.certificates);
-      setNotifications(fresh.notifications);
-      setAnnouncements(fresh.announcements);
-      setDiscussions(fresh.discussions);
-      setPlanner(fresh.planner);
-      setLeaderboards(fresh.leaderboards);
-      setTheme(fresh.theme);
+      applyStorageState(StorageService.getInitialState());
       addToast('Import Successful', 'Workspace state restored from JSON.', 'success');
       return true;
     } else {
@@ -426,7 +413,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     isCommandPaletteOpen,
     setCommandPaletteOpen,
     loginAsDemo,
-    logout,
     resetDemoData,
     exportState,
     importState,

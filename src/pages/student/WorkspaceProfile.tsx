@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Save, Plus, X, UserCheck, Shield, ExternalLink } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
-export const WorkspaceProfile: React.FC = () => {
+const WorkspaceProfileInner: React.FC = () => {
   const { currentUser, setCurrentUser, addToast } = useApp();
 
   const [name, setName] = useState(currentUser.name);
@@ -226,4 +226,10 @@ export const WorkspaceProfile: React.FC = () => {
       </form>
     </div>
   );
+};
+
+// Keyed wrapper: resets the editable form whenever the signed-in user changes
+export const WorkspaceProfile: React.FC = () => {
+  const { currentUser } = useApp();
+  return <WorkspaceProfileInner key={currentUser.id} />;
 };

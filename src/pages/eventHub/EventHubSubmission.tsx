@@ -4,7 +4,7 @@ import { Send, CheckCircle2, Github, Globe, FileText, AlertCircle, ExternalLink,
 import { useApp } from '../../context/AppContext';
 import { ProjectSubmission } from '../../types';
 
-export const EventHubSubmission: React.FC = () => {
+const EventHubSubmissionInner: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();
   const { events, submissions, saveSubmission, currentUser, teams, addToast } = useApp();
 
@@ -299,4 +299,10 @@ export const EventHubSubmission: React.FC = () => {
       </form>
     </div>
   );
+};
+
+// Keyed wrapper: forces a fresh form state when navigating between events
+export const EventHubSubmission: React.FC = () => {
+  const { eventId } = useParams<{ eventId: string }>();
+  return <EventHubSubmissionInner key={eventId} />;
 };

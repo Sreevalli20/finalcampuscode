@@ -27,7 +27,6 @@ import {
   Command,
   Sun,
   Moon,
-  LogOut,
   ChevronRight,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
@@ -55,7 +54,6 @@ export const WorkspaceLayout: React.FC = () => {
     toggleTheme,
     setCommandPaletteOpen,
     loginAsDemo,
-    logout,
   } = useApp();
 
   const unreadCount = notifications.filter((n) => !n.read).length;
