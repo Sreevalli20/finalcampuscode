@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Trophy, CheckCircle2, Users, Send, ArrowRight, Clock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const EventHubOverview: React.FC = () => {

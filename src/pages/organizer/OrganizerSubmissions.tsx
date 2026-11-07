@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { FileCheck, Github, Globe, FileText, CheckCircle2, Star, Save } from 'lucide-react';
+import { Github, Globe, Save } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
-import { ProjectSubmission } from '../../types';
 
 export const OrganizerSubmissions: React.FC = () => {
-  const { submissions, evaluateSubmission, addToast } = useApp();
+  const { submissions, evaluateSubmission } = useApp();
   const subList = Object.values(submissions);
 
   const [selectedSubId, setSelectedSubId] = useState<string>(subList[0]?.id || '');

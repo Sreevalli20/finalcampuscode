@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, Users, Trophy, Check, ArrowRight } from 'lucide-react';
+import { Search, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const EventsPage: React.FC = () => {

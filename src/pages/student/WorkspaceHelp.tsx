@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, ChevronUp, MessageSquare, Terminal } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp, Terminal } from 'lucide-react';
 
 export const WorkspaceHelp: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bot, Send, HelpCircle, ShieldCheck, Sparkles, BookOpen, User } from 'lucide-react';
+import { Bot, Send, User } from 'lucide-react';
 import { SEED_RULEBOT_KNOWLEDGE } from '../../services/seedData';
 
 interface Message {

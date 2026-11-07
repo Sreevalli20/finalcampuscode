@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# CampusCode
 
-# Run and deploy your AI Studio app
+The Next-Generation Student Innovation Ecosystem — a 100% frontend-only React application for discovering hackathons, assembling teams with HackMate, evaluating ideas with IdeaCheck, tracking deadlines, and showcasing verified portfolios.
 
-This contains everything you need to run your app locally.
+## Stack
 
-View your app in AI Studio: https://ai.studio/apps/f2dfe304-8494-4fff-9975-d411053802ce
+- React 19 + TypeScript
+- Vite 8 + Tailwind CSS v4
+- react-router-dom v7
+- lucide-react icons
+- jsPDF (lazy-loaded, client-side certificate export)
+- localStorage persistence (versioned JSON state, export/import snapshots)
+
+No backend, no database, no external API calls. All state lives in the browser.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
+```bash
+npm install
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server on port 3000 |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | TypeScript check (`tsc --noEmit`) |
+
+## Notes
+
+- Demo auth: use the one-click Student/Organizer profiles on `/login`.
+- All routes are code-split via `React.lazy`; `jspdf` is dynamically imported only when a certificate PDF is generated.

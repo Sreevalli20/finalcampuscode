@@ -7,12 +7,11 @@ import {
   Moon,
   ShieldAlert,
   Database,
-  CheckCircle2,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const WorkspaceSettings: React.FC = () => {
-  const { theme, toggleTheme, exportState, importState, resetDemoData, addToast } = useApp();
+  const { theme, toggleTheme, exportState, importState, resetDemoData } = useApp();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [resetConfirmOpen, setResetConfirmOpen] = useState(false);
 

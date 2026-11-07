@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Send, CheckCircle2, Github, Globe, FileText, AlertCircle, ExternalLink, Plus, X } from 'lucide-react';
+import { useParams } from 'react-router-dom';
+import { Send, CheckCircle2, Github, Globe, FileText, Plus, X } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { ProjectSubmission } from '../../types';
 

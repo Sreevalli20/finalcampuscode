@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Kanban, Plus, CheckCircle2, Clock, Trash2, ArrowRight } from 'lucide-react';
+import { Plus, CheckCircle2, Trash2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { PlannerTask } from '../../types';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Award, Star, Zap, Code2, Users, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Trophy, Star, Zap, Code2, Users, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const WorkspaceAchievements: React.FC = () => {

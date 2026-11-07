@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PlusCircle, ArrowLeft, Plus, X } from 'lucide-react';
+import { ArrowLeft, Plus, X } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { HackathonEvent } from '../../types';
 
@@ -13,9 +13,9 @@ export const OrganizerEventCreate: React.FC = () => {
   const [category, setCategory] = useState<HackathonEvent['category']>('Open Innovation');
   const [description, setDescription] = useState('');
   const [prizePool, setPrizePool] = useState('$20,000 in Grants');
-  const [participationType, setParticipationType] = useState<HackathonEvent['participationType']>('both');
-  const [minTeamSize, setMinTeamSize] = useState(1);
-  const [maxTeamSize, setMaxTeamSize] = useState(4);
+  const participationType: HackathonEvent['participationType'] = 'both';
+  const minTeamSize = 1;
+  const maxTeamSize = 4;
   const [startDate, setStartDate] = useState('2026-12-01');
   const [endDate, setEndDate] = useState('2026-12-03');
   const [deadline, setDeadline] = useState('2026-11-28');

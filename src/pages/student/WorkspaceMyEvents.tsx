@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Calendar, ArrowRight, Trophy, Users, FolderGit2, CheckCircle2 } from 'lucide-react';
+import { Calendar, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { EmptyState } from '../../components/common/EmptyState';
 

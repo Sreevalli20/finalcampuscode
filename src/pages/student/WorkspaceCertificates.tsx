@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { jsPDF } from 'jspdf';
-import { Award, Download, Printer, ExternalLink, ShieldCheck, CheckCircle2, Eye, X } from 'lucide-react';
+import { Award, Download, Printer, ShieldCheck, Eye } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { Certificate } from '../../types';
 import { Modal } from '../../components/common/Modal';
 
 export const WorkspaceCertificates: React.FC = () => {
-  const { certificates, currentUser, addToast } = useApp();
+  const { certificates, addToast } = useApp();
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
 
-  const generatePDF = (cert: Certificate) => {
+  const generatePDF = async (cert: Certificate) => {
     try {
+      // jspdf (~350KB) is dynamically imported only when a PDF is actually generated
+      const { jsPDF } = await import('jspdf');
       const doc = new jsPDF({
         orientation: 'landscape',
         unit: 'mm',

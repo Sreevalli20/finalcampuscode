@@ -2,17 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   Calendar,
-  Clock,
   Award,
   Users,
   Lightbulb,
   ArrowRight,
-  CheckCircle2,
-  Bell,
   Kanban,
   FileText,
-  AlertCircle,
-  ExternalLink,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
@@ -30,7 +25,6 @@ export const WorkspaceDashboard: React.FC = () => {
 
   const registeredEvents = events.filter((e) => registeredEventIds.includes(e.id));
   const activeSprints = registeredEvents.filter((e) => e.status === 'ongoing' || e.status === 'registration_open');
-  const completedCount = registeredEvents.filter((e) => e.status === 'completed').length;
   const rebuildEvent = events.find((e) => e.id === 'rebuild-26');
   const pendingTasks = planner.tasks.filter((t) => t.status !== 'completed');
 

@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Github,
   Linkedin,
   Globe,
   Award,
-  FolderGit2,
   ExternalLink,
   Code2,
   GraduationCap,
-  Sparkles,
   Share2,
   CheckCircle2,
-  Calendar,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const WorkspacePortfolio: React.FC = () => {
-  const { currentUser, certificates, registeredEventIds, events, addToast } = useApp();
-
-  const registeredEvents = events.filter((e) => registeredEventIds.includes(e.id));
+  const { currentUser, certificates, addToast } = useApp();
 
   // Dynamic calculation of portfolio completeness
   const calculateCompleteness = () => {

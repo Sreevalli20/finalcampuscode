@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save, Plus, X, UserCheck, Shield, ExternalLink } from 'lucide-react';
+import { Save, Plus, X } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 const WorkspaceProfileInner: React.FC = () => {

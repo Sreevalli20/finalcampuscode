@@ -6,9 +6,6 @@ import {
   Users2,
   Lightbulb,
   CheckCircle2,
-  ShieldCheck,
-  Calendar,
-  Sparkles,
   ExternalLink,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';

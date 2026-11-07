@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { Breadcrumbs } from '../../components/common/Breadcrumbs';
 

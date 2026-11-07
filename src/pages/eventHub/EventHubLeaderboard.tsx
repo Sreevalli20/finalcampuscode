@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Trophy, TrendingUp, TrendingDown, Minus, Filter, Sparkles, ShieldAlert } from 'lucide-react';
+import { Trophy, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const EventHubLeaderboard: React.FC = () => {

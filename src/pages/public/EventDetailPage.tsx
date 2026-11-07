@@ -1,12 +1,9 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
-  Calendar,
-  Clock,
   Users,
   Trophy,
   CheckCircle2,
-  AlertCircle,
   ArrowRight,
   ArrowLeft,
   Share2,

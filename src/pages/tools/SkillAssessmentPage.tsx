@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Award, CheckCircle2, AlertCircle, RotateCcw, ArrowRight, Star } from 'lucide-react';
+import { Award, RotateCcw, Star } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
-import { SkillQuizQuestion, SkillQuizResult } from '../../types';
+import { SkillQuizResult } from '../../types';
 
 export const SkillAssessmentPage: React.FC = () => {
   const { addToast } = useApp();

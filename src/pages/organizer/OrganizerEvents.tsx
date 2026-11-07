@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, PlusCircle, ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react';
+import { PlusCircle, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { EventStatus } from '../../types';
 

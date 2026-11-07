@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bell, Pin, Search, ShieldCheck } from 'lucide-react';
+import { Pin, Search, ShieldCheck } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const WorkspaceAnnouncements: React.FC = () => {

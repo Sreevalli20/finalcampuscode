@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Compass, LayoutDashboard } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 export const NotFoundPage: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Lightbulb, CheckCircle2, AlertTriangle, ArrowRight, Sparkles, HelpCircle } from 'lucide-react';
+import { Lightbulb, CheckCircle2, AlertTriangle, Sparkles } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 interface RubricScore {

@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Calendar,
   Users,
-  FileCheck,
-  Trophy,
   PlusCircle,
   Bell,
-  ArrowRight,
   ShieldCheck,
   Send,
 } from 'lucide-react';

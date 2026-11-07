@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MessagesSquare, Search, MessageSquare, ThumbsUp, ArrowRight } from 'lucide-react';
+import { Search, MessageSquare, ThumbsUp, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { Link } from 'react-router-dom';
 

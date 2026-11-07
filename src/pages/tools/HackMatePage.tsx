@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import {
-  Users2,
   Search,
-  Filter,
   CheckCircle2,
   UserPlus,
   Sparkles,
-  ExternalLink,
   Github,
   Linkedin,
 } from 'lucide-react';

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Shield, ArrowRight, UserCheck } from 'lucide-react';
+import { Eye, EyeOff, Shield, UserCheck } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
-  const { loginAsDemo, addToast } = useApp();
+  const { loginAsDemo } = useApp();
   const [email, setEmail] = useState('kavya.sharma@campuscode.edu');
   const [password, setPassword] = useState('demo1234');
   const [showPassword, setShowPassword] = useState(false);

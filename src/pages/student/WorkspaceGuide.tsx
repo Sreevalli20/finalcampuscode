@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, CheckCircle2, Lightbulb, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const WorkspaceGuide: React.FC = () => {

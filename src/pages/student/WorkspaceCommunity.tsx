@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import {
-  MessageSquare,
   ThumbsUp,
-  Share2,
   Send,
   Plus,
-  Trash2,
-  Tag,
   Search,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';

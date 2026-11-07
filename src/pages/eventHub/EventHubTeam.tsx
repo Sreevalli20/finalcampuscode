@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Users, Plus, Trash2, Shield, UserPlus, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Trash2, UserPlus, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { Team, TeamMember } from '../../types';
 import { SEED_HACKMATE_PROFILES } from '../../services/seedData';

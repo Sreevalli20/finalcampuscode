@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Cpu, Code2, Users2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Cpu, Users2, ArrowRight } from 'lucide-react';
 import { Breadcrumbs } from '../../components/common/Breadcrumbs';
 
 export const AboutPage: React.FC = () => {

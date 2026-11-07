@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Filter, ArrowRight, Sparkles, Trophy, Users, Shield } from 'lucide-react';
+import { Search, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const ExplorePage: React.FC = () => {

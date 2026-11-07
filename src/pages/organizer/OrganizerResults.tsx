@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Trophy, Award, CheckCircle2, RotateCcw, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { Trophy, CheckCircle2, Sparkles } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { LeaderboardEntry, Certificate } from '../../types';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bell, CheckCheck, Trash2, ArrowRight, Clock, AlertCircle } from 'lucide-react';
+import { Bell, CheckCheck, Trash2, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { EmptyState } from '../../components/common/EmptyState';
 

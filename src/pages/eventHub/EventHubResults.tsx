@@ -1,13 +1,12 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Trophy, Award, CheckCircle2, Star, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Award, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const EventHubResults: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();
-  const { events, submissions, certificates } = useApp();
+  const { submissions, certificates } = useApp();
 
-  const event = events.find((e) => e.id === eventId);
   const submission = submissions[eventId || ''];
   const cert = certificates.find((c) => c.eventId === eventId);
 

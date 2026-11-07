@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Download, Filter, Users, CheckCircle2 } from 'lucide-react';
+import { Search, Download, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { SEED_HACKMATE_PROFILES } from '../../services/seedData';
 

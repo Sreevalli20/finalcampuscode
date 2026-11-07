@@ -2,5 +2,5 @@
   "name": "CampusCode",
   "description": "The Next-Generation Student Innovation Ecosystem — discover hackathons, assemble teams with HackMate, evaluate ideas with IdeaCheck, track deadlines, and showcase verified portfolios.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

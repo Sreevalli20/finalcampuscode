@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CreditCard, QrCode, ShieldCheck, Download, Share2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { QrCode, ShieldCheck, Share2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export const WorkspaceDigitalCard: React.FC = () => {
