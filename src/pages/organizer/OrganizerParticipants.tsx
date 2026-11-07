@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, Download, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { SEED_HACKMATE_PROFILES } from '../../services/seedData';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const OrganizerParticipants: React.FC = () => {
   const { currentUser, addToast } = useApp();
@@ -105,8 +106,8 @@ export const OrganizerParticipants: React.FC = () => {
                 <tr key={student.id} className="hover:bg-neutral-800/30 transition-colors">
                   <td className="py-3.5 px-4">
                     <div className="flex items-center gap-3">
-                      <img
-                        src={student.avatarUrl || '/src/assets/images/student_innovator_portrait_1794026124336.jpg'}
+                      <SmartImage
+                        src={student.avatarUrl || '/images/student_innovator_portrait_1794026124336.jpg'}
                         alt={student.name}
                         className="w-8 h-8 rounded-lg object-cover border border-amber-500/30"
                       />

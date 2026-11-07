@@ -10,6 +10,7 @@ import {
 import { useApp } from '../../context/AppContext';
 import { SEED_HACKMATE_PROFILES } from '../../services/seedData';
 import { UserProfile } from '../../types';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const HackMatePage: React.FC = () => {
   const { currentUser, addToast } = useApp();
@@ -150,8 +151,8 @@ export const HackMatePage: React.FC = () => {
                 {/* Header with Candidate Info & Compatibility Score */}
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <img
-                      src={candidate.avatarUrl || '/src/assets/images/student_innovator_portrait_1794026124336.jpg'}
+                    <SmartImage
+                      src={candidate.avatarUrl || '/images/student_innovator_portrait_1794026124336.jpg'}
                       alt={candidate.name}
                       className="w-12 h-12 rounded-xl object-cover border border-amber-500/40 shadow-sm"
                     />

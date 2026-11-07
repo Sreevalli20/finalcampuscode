@@ -9,6 +9,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const LandingPage: React.FC = () => {
   const { events } = useApp();
@@ -70,10 +71,10 @@ export const LandingPage: React.FC = () => {
           {/* Hero Visual */}
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl bg-neutral-900 group">
-              <img
-                src="/src/assets/images/campuscode_hero_banner_1794026123043.jpg"
+              <SmartImage
+                src="/images/campuscode_hero_banner_1794026123043.jpg"
                 alt="Students collaborating on hardware and software prototypes in modern lab"
-                referrerPolicy="no-referrer"
+                loading="eager"
                 className="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent" />
@@ -164,10 +165,9 @@ export const LandingPage: React.FC = () => {
 
             <div className="lg:col-span-5">
               <div className="relative rounded-xl overflow-hidden border border-neutral-800 shadow-xl">
-                <img
+                <SmartImage
                   src={rebuildEvent.bannerImage}
                   alt="ReBuild '26 Key Visual"
-                  referrerPolicy="no-referrer"
                   className="w-full h-64 sm:h-72 object-cover"
                 />
                 <div className="absolute inset-0 bg-neutral-950/30" />
@@ -262,10 +262,9 @@ export const LandingPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center p-8 sm:p-12 rounded-2xl bg-neutral-900/30 border border-neutral-800">
           <div className="lg:col-span-5">
             <div className="rounded-xl overflow-hidden border border-neutral-800 shadow-xl bg-neutral-950">
-              <img
-                src="/src/assets/images/student_showcase_project_1794026124306.jpg"
+              <SmartImage
+                src="/images/student_showcase_project_1794026124306.jpg"
                 alt="Student prototype robotic telemetry project"
-                referrerPolicy="no-referrer"
                 className="w-full h-72 sm:h-80 object-cover"
               />
             </div>

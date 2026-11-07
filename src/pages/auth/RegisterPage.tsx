@@ -90,7 +90,7 @@ export const RegisterPage: React.FC = () => {
       role: 'student',
       createdAt: new Date().toISOString(),
       studentIdNumber: `CC-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-      avatarUrl: '/src/assets/images/student_innovator_portrait_1794026124336.jpg',
+      avatarUrl: '/images/student_innovator_portrait_1794026124336.jpg',
     };
 
     setCurrentUser(newProfile);

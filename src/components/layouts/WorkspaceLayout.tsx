@@ -32,6 +32,7 @@ import {
 import { useApp } from '../../context/AppContext';
 import { CommandPalette } from '../common/CommandPalette';
 import { ToastContainer } from '../common/ToastContainer';
+import { SmartImage } from '../common/SmartImage';
 
 interface NavGroup {
   label: string;
@@ -310,8 +311,8 @@ export const WorkspaceLayout: React.FC = () => {
               to="/workspace/profile"
               className="flex items-center gap-2 pl-2 pr-3 py-1 rounded-full bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 transition-colors"
             >
-              <img
-                src={currentUser.avatarUrl || '/src/assets/images/student_innovator_portrait_1794026124336.jpg'}
+              <SmartImage
+                src={currentUser.avatarUrl || '/images/student_innovator_portrait_1794026124336.jpg'}
                 alt={currentUser.name}
                 className="w-6 h-6 rounded-full object-cover border border-amber-500/40"
               />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Save, Plus, X } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { SmartImage } from '../../components/common/SmartImage';
 
 const WorkspaceProfileInner: React.FC = () => {
   const { currentUser, setCurrentUser, addToast } = useApp();
@@ -66,8 +67,8 @@ const WorkspaceProfileInner: React.FC = () => {
       <form onSubmit={handleSave} className="space-y-6">
         {/* Profile Card Header */}
         <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-          <img
-            src={currentUser.avatarUrl || '/src/assets/images/student_innovator_portrait_1794026124336.jpg'}
+          <SmartImage
+            src={currentUser.avatarUrl || '/images/student_innovator_portrait_1794026124336.jpg'}
             alt={currentUser.name}
             className="w-20 h-20 rounded-2xl object-cover border-2 border-amber-500/50 shadow-lg"
           />

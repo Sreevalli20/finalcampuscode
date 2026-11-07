@@ -22,6 +22,29 @@ import {
 } from './seedData';
 
 const STORAGE_PREFIX = 'campuscode_v1_';
+const LEGACY_ASSET_PREFIX = '/src/assets/images/';
+const PUBLIC_ASSET_PREFIX = '/images/';
+
+// Older builds persisted image URLs like "/src/assets/images/x.jpg", which are
+// not bundled by Vite and 404 in production. Rewrite them to the public dir.
+function normalizeAssetPaths<T>(value: T): T {
+  if (typeof value === 'string') {
+    return (value.startsWith(LEGACY_ASSET_PREFIX)
+      ? PUBLIC_ASSET_PREFIX + value.slice(LEGACY_ASSET_PREFIX.length)
+      : value) as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeAssetPaths(item)) as T;
+  }
+  if (value !== null && typeof value === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value)) {
+      out[k] = normalizeAssetPaths(v);
+    }
+    return out as T;
+  }
+  return value;
+}
 
 export interface StorageState {
   version: number;
@@ -141,7 +164,7 @@ export const StorageService = {
       return seedState;
     }
 
-    return {
+    return normalizeAssetPaths({
       version: 1,
       currentUser: safeGet<UserProfile>('user', SEED_STUDENT_USER),
       events: safeGet<HackathonEvent[]>('events', SEED_EVENTS),
@@ -155,7 +178,7 @@ export const StorageService = {
       planner: safeGet<PlannerProject>('planner', SEED_PLANNER_PROJECT),
       leaderboards: safeGet<Record<string, LeaderboardEntry[]>>('leaderboards', { 'rebuild-26': SEED_LEADERBOARD_REBUILD }),
       theme: safeGet<'dark' | 'light'>('theme', 'dark'),
-    };
+    });
   },
 
   saveFullState(state: StorageState): void {

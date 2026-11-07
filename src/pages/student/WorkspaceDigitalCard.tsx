@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { QrCode, ShieldCheck, Share2 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const WorkspaceDigitalCard: React.FC = () => {
   const { currentUser, addToast } = useApp();
@@ -60,8 +61,8 @@ export const WorkspaceDigitalCard: React.FC = () => {
               </div>
 
               <div className="flex items-center gap-4 my-auto">
-                <img
-                  src={currentUser.avatarUrl || '/src/assets/images/student_innovator_portrait_1794026124336.jpg'}
+                <SmartImage
+                  src={currentUser.avatarUrl || '/images/student_innovator_portrait_1794026124336.jpg'}
                   alt={currentUser.name}
                   className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border-2 border-amber-500/60 shadow-md shrink-0"
                 />

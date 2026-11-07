@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { Breadcrumbs } from '../../components/common/Breadcrumbs';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const EventDetailPage: React.FC = () => {
   const { eventId } = useParams<{ eventId: string }>();
@@ -48,10 +49,9 @@ export const EventDetailPage: React.FC = () => {
       {/* Header Banner */}
       <div className="rounded-2xl border border-neutral-800 bg-neutral-900/40 overflow-hidden relative">
         <div className="relative h-64 sm:h-80 w-full overflow-hidden bg-neutral-950">
-          <img
+          <SmartImage
             src={event.bannerImage}
             alt={event.title}
-            referrerPolicy="no-referrer"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent" />

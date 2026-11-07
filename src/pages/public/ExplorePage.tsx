@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ArrowRight } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const ExplorePage: React.FC = () => {
   const { events } = useApp();
@@ -129,10 +130,9 @@ export const ExplorePage: React.FC = () => {
             >
               <div>
                 <div className="relative h-44 overflow-hidden bg-neutral-950">
-                  <img
+                  <SmartImage
                     src={ev.bannerImage}
                     alt={ev.title}
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent" />

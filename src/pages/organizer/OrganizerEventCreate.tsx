@@ -49,7 +49,7 @@ export const OrganizerEventCreate: React.FC = () => {
       category,
       description,
       fullOverview: description,
-      bannerImage: '/src/assets/images/campuscode_hero_banner_1794026123043.jpg',
+      bannerImage: '/images/campuscode_hero_banner_1794026123043.jpg',
       registrationDeadline: `${deadline}T23:59:59Z`,
       startDate: `${startDate}T09:00:00Z`,
       endDate: `${endDate}T18:00:00Z`,

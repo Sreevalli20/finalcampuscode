@@ -11,6 +11,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { SmartImage } from '../../components/common/SmartImage';
 
 export const WorkspacePortfolio: React.FC = () => {
   const { currentUser, certificates, addToast } = useApp();
@@ -121,8 +122,8 @@ export const WorkspacePortfolio: React.FC = () => {
 
           <div className="md:col-span-4 flex justify-center md:justify-end">
             <div className="relative">
-              <img
-                src={currentUser.avatarUrl || '/src/assets/images/student_innovator_portrait_1794026124336.jpg'}
+              <SmartImage
+                src={currentUser.avatarUrl || '/images/student_innovator_portrait_1794026124336.jpg'}
                 alt={currentUser.name}
                 className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl object-cover border-2 border-amber-500/50 shadow-2xl"
               />
